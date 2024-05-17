@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:button class="interaction-event-button" label="Terms Conditions" onclick="{!c.terms}"/>
+    <lightning:button class="interaction-event-button" label="Secure Flow" onclick="{!c.secure}" />
+</aura:component>
