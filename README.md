@@ -47,6 +47,25 @@ copy this down as you will need it later.
 
 Create and get the FlowId similar to the secure flow. For details on the use case for the conference flow and how to build it you can see more details [here](https://github.com/mcphee11/conference-terms-conditions)
 
+## Workflow (used for Copilot summary saving)
+
+Create a workflow and ensure that you create data with a "Direction" of `input` with the below names.
+
+```
+Flow.conversationId
+Flow.reason
+Flow.resolution
+Flow.summary
+```
+
+NOTE the `Flow.` part will auto append to the name as long as you create it from the Resources -> Data section. These are all of `type` string.
+
+![](/docs/images/workflow.png?raw=true)
+
+Copy the workflowId like the above from teh URL when you have it open and save it as you will need it later on in the helper.js code.
+
+This Workflow will get triggered at the end of a conversation with Copilot active for the conversation summary... this will then send not just the summary created by the GenAI but also the resolution, reason and conversationId. From here you can then do what you want with the data. For example use a DataAction to create a "Task Activity" on the contact record with the data to be saved in Salesforce. or really whatever you want to do with it in a automated way.
+
 ## Creating the Salesforce Component
 
 In the Salesforce Developer Console create a new Lightning Component Bundle and use each of the objects in the src folder for the
@@ -69,6 +88,7 @@ clientId: 'ENTER_YOUR_CLIENTID',
 redirectUrl: 'ENTER_YOUR_HOSTED_INDEX_PAGE',  // https://yourhosting.com/oauth/index.html
 secureFlowId: 'ENTER_SECURE_FLOW_ID',
 conferenceFlowId: 'ENTER_CALL_FLOW_ID',
+workFlowId: 'ENTER_WORK_FLOW_ID',
 ```
 
 Now add the component to the `Voice Call` Object in Salesforce for the button to appear and be used.

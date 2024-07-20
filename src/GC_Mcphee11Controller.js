@@ -16,6 +16,7 @@
           popup.close()
           clearInterval(checkPopup)
           sessionStorage.setItem('gc_accessToken', jsonResponse.access_token)
+          helper.setup(component, event, helper)
         }
       })
       const checkPopup = setInterval(
@@ -26,8 +27,11 @@
         }.bind(this),
         1000
       )
+    } else {
+      helper.setup(component, event, helper)
     }
   },
+
   secure: function (component, event, helper) {
     console.log('Secure Flow')
     const key = sessionStorage.getItem('gc_accessToken')
