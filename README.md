@@ -8,6 +8,7 @@ In this example you will find a folder `src` that has 4 files in it
   GC_Mcphee11.cmp
   GC_Mcphee11Controller.js
   GC_Mcphee11Helper.js
+  GC_Mcphee11.css
   index.html
 ```
 
@@ -74,6 +75,7 @@ In the Salesforce Developer Console create a new Lightning Component Bundle and 
 Component (GC_Mcphee11.cmp)
 Controller (GC_Mcphee11Controller.js)
 Helper (GC_Mcphee11Helper.js)
+Styles (GC_Mcphee11.css)
 ```
 
 Its probably easiest to simply copy and paste the contents from each file into your files you have created as part of the bundle. Then save the changes.
