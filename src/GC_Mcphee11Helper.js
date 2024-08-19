@@ -39,7 +39,7 @@
         console.dir(respJSON1)
         sessionStorage.setItem('gc_channelId', respJSON1.id)
         channelId = respJSON1.id
-        selfSetup.createTopic(userId, channelId, key, selfSetup.region)
+        selfSetup.createTopic(component, userId, channelId, key, selfSetup.region)
       }
       xhr1.open('POST', 'https://api.' + selfSetup.region + '/api/v2/notifications/channels')
       xhr1.setRequestHeader('Content-type', 'application/json')
@@ -50,11 +50,11 @@
     if (channelId && userId) {
       //sub to topic
       console.log('channel already exists')
-      selfSetup.createTopic(userId, channelId, key, selfSetup.region)
+      selfSetup.createTopic(component, userId, channelId, key, selfSetup.region)
     }
   },
 
-  createTopic: function (userId, channelId, key, region) {
+  createTopic: function (component, userId, channelId, key, region) {
     //sub to topic
     var selfCreateTopic = this
     const xhr = new XMLHttpRequest()
@@ -62,7 +62,7 @@
       console.log('SUB Done')
       var respJSON = JSON.parse(this.responseText)
       console.dir(respJSON)
-      selfCreateTopic.wss(channelId)
+      selfCreateTopic.wss(component, channelId)
     }
     var data2 = [{ id: 'v2.users.' + userId + '.conversations.summaries' }]
 
@@ -73,7 +73,7 @@
     console.log('topic sent')
   },
 
-  wss: function (channelId) {
+  wss: function (component, channelId) {
     var selfWss = this
     socket = true
     console.log('creating wss: wss://streaming.' + selfWss.region + '/channels/' + channelId)
@@ -88,6 +88,7 @@
         return
       } else {
         console.log(jsonData)
+        selfWss.uiUpdate(component, jsonData.eventBody)
         selfWss.workFlow(selfWss.region, selfWss.workFlowId, jsonData.eventBody)
       }
     }
@@ -118,4 +119,10 @@
       xhr.send(JSON.stringify(data))
     }
   },
+
+  uiUpdate: function (component, response) {
+    component.set("v.summary", response.summary.text)
+    component.set("v.reason", response.reason.text)
+    component.set("v.resolution", response.resolution.text)
+  }
 })

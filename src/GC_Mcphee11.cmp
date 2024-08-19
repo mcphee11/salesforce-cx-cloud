@@ -1,5 +1,21 @@
 <aura:component implements="flexipage:availableForAllPageTypes" access="global">
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="interactionId" type="String" />
+    <aura:attribute name="summary" type="String" />
+    <aura:attribute name="reason" type="String" />
+    <aura:attribute name="resolution" type="String" />
+
     <lightning:button class="interaction-event-button" label="Terms Conditions" onclick="{!c.terms}"/>
     <lightning:button class="interaction-event-button" label="Secure Flow" onclick="{!c.secure}" />
+    <br />
+    <div>
+        <div class="group">
+            <label class="event-label">Summary:</label>
+            <lightning:textarea name="summary" aura:id="summary" value="{!v.summary}" updateOn="change" />
+        </div>
+    <ui:inputText label="Reason contacted: " class="field" value="{!v.reason}" updateOn="change"/>
+    <br />
+    <ui:inputText label="Resolution: " class="field" value="{!v.resolution}" updateOn="change"/>
+    <br />
+    </div>
 </aura:component>

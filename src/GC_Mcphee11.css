@@ -1,0 +1,21 @@
+.THIS {
+  background: #fff;
+  padding: 13px;
+  border-radius: 4px;
+}
+
+.THIS .top-button {
+  margin-bottom: 10px;
+}
+
+.THIS .event-label {
+  font-weight: bold;
+}
+
+.THIS .group {
+  margin-bottom: 10px;
+}
+
+.THIS textarea {
+  height: 200px;
+}

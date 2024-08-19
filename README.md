@@ -15,7 +15,7 @@ The `index.html` file is separate and needs to be hosted on a cloud web server t
 
 The other 3x files are the Salesforce lightening component that will render the buttons required for these use cases. Right now these use cases include [Secure Flow](https://help.mypurecloud.com/articles/secure-flows/) and [conference terms](https://github.com/mcphee11/conference-terms-conditions) as native buttons inside of salesforce
 
-![](docs/images/buttons.png?raw=true)
+![](docs/images/component.png?raw=true)
 
 ## OAuth
 
