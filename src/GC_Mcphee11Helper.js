@@ -39,7 +39,7 @@
         console.dir(respJSON1)
         sessionStorage.setItem('gc_channelId', respJSON1.id)
         channelId = respJSON1.id
-        selfSetup.createTopic(component, userId, channelId, key, selfSetup.region)
+        selfSetup.createTopic(component, sessionStorage.getItem('gc_userId'), channelId, key, selfSetup.region)
       }
       xhr1.open('POST', 'https://api.' + selfSetup.region + '/api/v2/notifications/channels')
       xhr1.setRequestHeader('Content-type', 'application/json')
