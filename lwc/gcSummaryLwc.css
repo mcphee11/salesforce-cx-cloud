@@ -1,0 +1,28 @@
+.component-body {
+  background: #fff;
+  padding: 13px;
+  border-radius: 4px;
+}
+
+.top-button {
+  margin-bottom: 10px;
+}
+
+.event-label {
+  font-weight: bold;
+}
+
+.group {
+  margin-bottom: 10px;
+}
+
+textarea {
+  height: 200px;
+}
+
+.addButton {
+  height: 36px;
+  margin-bottom: 0px;
+  margin-top: auto;
+  margin-left: 8px;
+}

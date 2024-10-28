@@ -1,0 +1,19 @@
+<!-- prettier-ignore -->
+<template>
+  <div class="component-body">
+    <lightning-button class="interaction-event-button" label="Terms Conditions" onclick={terms}></lightning-button>
+    <lightning-button class="interaction-event-button" label="Secure Flow" onclick={testing}></lightning-button>
+    <br />
+    <div>
+      <div class="group">
+        <label class="event-label">Summary:</label>
+        <lightning-textarea name="summary" aura:id="summary" value={summary}></lightning-textarea>
+      </div>
+      <lightning-input label="Reason contacted: " class="field" value={reason}></lightning-input>
+      <br />
+      <lightning-input label="Resolution: " class="field" value={resolution}></lightning-input>
+      <br />
+    </div>
+    <br />
+  </div>
+</template>
