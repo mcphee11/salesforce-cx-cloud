@@ -2,6 +2,10 @@
 
 A collection of custom code examples for extending on top of the OOTB CX Cloud integration with Salesforce and Genesys Cloud
 
+### UPDATE:
+
+**I have also created a `lwc` version of this code in the `\lwc` Dir of this project. It does the same as the Aura Component below but as its a LWC supports the newer Lightning Web Security that is being enforced more and more in environments.**
+
 In this example you will find a folder `src` that has 4 files in it
 
 ```
