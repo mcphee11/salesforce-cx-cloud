@@ -1,0 +1,20 @@
+<!-- prettier-ignore -->
+<template>
+  <div class="component-body">
+      <div style="display: inline-flex; margin-bottom: 8px">
+        <img src="https://s3.amazonaws.com/inin-static-assets/msteams-integration/msteams-icon.svg" class="iconImage" alt="My Custom Icon" title="Custom Icon">
+        <lightning-input placeholder="Enter Name: " value={inputText} onchange={handleInputChange}></lightning-input>
+        <lightning-button label="search" icon-name="utility:search" class="btn" onclick={handleSearch}></lightning-button>
+      </div>
+      <div class="card-container">  
+        <template for:each={cards} for:item="card">
+          <div key={card.title} class="slds-p-around_xx-small">
+            <lightning-card title={card.title} icon-name={card.iconName} class={card.class}>
+              <lightning-button tel={card.tel} userid={card.userId} label="call" icon-name="utility:call" class="btn" slot="actions" onclick={handleCallBtn}></lightning-button>
+            </lightning-card>
+          </div>
+        </template>
+      </div>
+    <br />
+  </div>
+</template>

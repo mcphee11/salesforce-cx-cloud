@@ -1,0 +1,36 @@
+.component-body {
+  background: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+}
+
+.btn {
+  height: 36px;
+  margin-top: auto;
+  margin-left: 8px;
+  margin-bottom: -2px;
+}
+
+.iconImage {
+  width: 24px;
+  margin-right: 8px;
+  margin-top: 14px;
+}
+
+.status-green {
+  --sds-c-icon-color-background: hsl(125, 64%, 37%);
+}
+
+.status-red {
+  --sds-c-icon-color-background: hsl(0, 100%, 50%);
+}
+
+.status-yellow {
+  --sds-c-icon-color-background: hsl(50, 100%, 56%);
+}
+
+.status-grey {
+  --sds-c-icon-color-background: hsl(0, 0%, 29%);
+}

@@ -102,3 +102,13 @@ Now add the component to the `Voice Call` Object in Salesforce for the button to
 ## Final thoughts
 
 So while this repo is only 2x use cases that are quite basic, using this method of integrating into the Genesys Cloud Platform API you can then really start to offer all sorts of customizations on top of what CX Cloud offers OOTB.
+
+## New use case added: Teams Presence
+
+I recently added a LWC example of you you can integrate into both the Genesys Cloud API and the Microsoft Teams Graph API to show teams users presence in salesforce that have the Genesys & Teams integration on them.
+
+This can be found in the `teams-lwc` folder and the `teams-oauth-pages` are where the HTML pages are used for the OAuth redirects like in the above examples.
+
+![](/docs/images/teams.png?raw=true)
+
+As this uses the Microsoft API you will need to create a Implicit Grant OAuth in Azure as well as add the Microsoft URL to the `trusted` list in salesforce.
